@@ -9,7 +9,7 @@ const Main = () => {
 
     const addIngredient = (formData) => {
         const newIngredient = formData.get("ingredient")
-        setingredients(prev => [...prev, newIngredient])
+        newIngredient && setingredients(prev => [...prev, newIngredient])
     }
 
     const getRecipe = async () => {
