@@ -1,7 +1,7 @@
 import { useState } from "react";
 import IngredientsList from "./IngredientsList";
 import ClaudeRecipe from "./ClaudeRecipe";
-import { getRecipeFromMistral } from "../../server/AI";
+import { getRecipeFromMistral } from "../../server/ai";
 
 const Main = () => {
     const [ingredients, setingredients] = useState([])
