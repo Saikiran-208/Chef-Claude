@@ -12,7 +12,7 @@ const IngredientsList = ( {ingredients,getRecipe} ) => {
                                 {ingredients.map(item => <li className="" key={item}>{item}</li>)}
                             </>
                             :
-                            <h1 className="ml-[-19px] font-bold text-2xl">No Ingredients </h1>
+                            <h1 className="ml-[-19px] font-semibold text-xl">Add Ingredients to get the recipe! </h1>
                     }
                 </ul>
             </div>
