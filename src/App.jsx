@@ -1,7 +1,7 @@
 import './App.css'
 import Navbar from './components/Navbar'
-import Main from './components/main'
-import Test from './components/practice'
+import Main from './components/Main'
+
 
 function App() {
   
@@ -9,7 +9,7 @@ function App() {
     <>
     <Navbar />
     <Main  />
-    {/* <Test /> */}
+   
    
     </>
   )
