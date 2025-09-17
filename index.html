@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+    rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Chef Claude</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Inter, sans-serif;
+      margin: 0;
+      background-color: #FAFAF8;
+
+      /* background-color: black; */
+    }
+
+    main {
+      padding: 30px 30px 10px;
+    }
+
+    #Button {
+      width: 150px;
+      height: 150px;
+      margin: 5px;
+      border: 3px solid white;
+      border-radius: 5px;
+    }
+
+    .recipe-container {
+      color: #475467;
+      line-height: 28px;
+      font-size: 1.125rem;
+      font-weight: 400;
+    }
+
+    .recipe-container ul li {
+      margin-bottom: 8px;
+      margin-left: 35px;
+      list-style-type: disc;
+    }
+
+    .recipe-container ol li {
+      margin-bottom: 8px;
+      margin-left: 35px;
+      list-style-type: decimal;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+
+</html>
