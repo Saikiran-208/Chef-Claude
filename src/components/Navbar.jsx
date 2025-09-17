@@ -1,10 +1,10 @@
 import React from 'react'
-
+import chefImage from "/src/assets/chef.png"
 const Navbar = () => {
   return (
     <>
     <div className='flex justify-center items-center gap-2 p-4 border-b border-gray-200 shadow bg-white'>
-      <img className='w-12 h-11' src="/src/assets/chef.png" alt="chef img" />
+      <img className='w-12 h-11' src={chefImage} alt="chef img" />
       <p className='text-4xl '>Chef Claude</p>
       
     </div>
