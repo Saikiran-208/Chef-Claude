@@ -1,6 +1,6 @@
 import React from 'react'
 
-const IngredientsList = ( {ingredients,getRecipe} ) => {
+const IngredientsList = ( {ingredients,getRecipe,ref} ) => {
     return (
         <>
             <div className=' px-2 py-4 mt-[-10px]  max-sm:mx-10 '>
@@ -19,8 +19,8 @@ const IngredientsList = ( {ingredients,getRecipe} ) => {
 
 
             {
-                ingredients.length > 3 && <div className="flex gap-10 bg-yellow-50 px-2 py-5 w-150 max-sm:max-w-3xs max-sm:min-w-sm rounded-md shadow justify-center items-center">
-                    <div className="flex flex-col gap-3 max-sm:gap-1">
+                ingredients.length > 3 && <div ref={ref} className="flex gap-10 bg-yellow-50 px-2 py-5 w-150 max-sm:max-w-3xs max-sm:min-w-sm rounded-md shadow justify-center items-center">
+                    <div className="flex flex-col gap-3 max-sm:gap-1 " >
                         <p className="font-semibold text-lg max-sm:text-sm">Ready for a recipe?</p>
                         <p className="text-gray-500 max-sm:text-xs">Generate a recipe from your list of ingredients.</p>
                     </div>

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import IngredientsList from "./IngredientsList";
 import ClaudeRecipe from "./ClaudeRecipe";
 import { getRecipeFromMistral } from "../../server/ai";
@@ -6,10 +6,21 @@ import { getRecipeFromMistral } from "../../server/ai";
 const Main = () => {
     const [ingredients, setingredients] = useState([])
     const [recipe, setRecipe] = useState("")
+    const recpieSection = useRef()
+    console.log(recpieSection)
+
+    useEffect(() => {
+      
+    recipe &&
+      recpieSection.current.scrollIntoView({behavior:"smooth"})
+    }, [recipe])
+    
 
     const addIngredient = (formData) => {
         const newIngredient = formData.get("ingredient")
+        newIngredient &&
         setingredients(prev => [...prev, newIngredient])
+
     }
 
     const getRecipe = async () => {
@@ -38,7 +49,7 @@ const Main = () => {
                     >+ Add ingredient</button>
 
                 </form>
-                <IngredientsList ingredients={ingredients} getRecipe={getRecipe} />
+                <IngredientsList ingredients={ingredients} getRecipe={getRecipe} ref={recpieSection} />
             </div>
             <div>
                 {
