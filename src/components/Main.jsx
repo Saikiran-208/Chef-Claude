@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef,useEffect } from "react";
 import IngredientsList from "./IngredientsList";
 import ClaudeRecipe from "./ClaudeRecipe";
 import { getRecipeFromMistral } from "../../server/ai";
@@ -10,8 +10,7 @@ const Main = () => {
     // console.log(recpieSection)
 
     useEffect(() => {
-      
-    recipe &&
+       recipe &&
       recpieSection.current.scrollIntoView({behavior:"smooth"})
     }, [recipe])
 
