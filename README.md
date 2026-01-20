@@ -27,7 +27,8 @@ Chef-Claude is an AI-powered recipe recommendation app built using React and Vit
 - Enter a list of ingredients
 - Generate creative recipe suggestions
 - AI-generated recipes using Hugging Face Inference models
-- Responsive UI design
+- **Fully responsive design** - optimized for mobile, tablet, and desktop
+- Nutrition tracking and flavor pairing suggestions
 - Secure handling of API tokens via environment variables
 
 ---
