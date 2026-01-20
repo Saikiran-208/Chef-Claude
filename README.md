@@ -1,12 +1,37 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+```markdown
+# Chef-Claude
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Chef-Claude is an AI-powered recipe recommendation app built using React and Vite. Users input ingredients they have on hand and receive recipe suggestions using an AI model.
+
+🔗 Live Demo: https://chef-claude-six-olive.vercel.app
+
+---
+
+## 🧠 Tech Stack
+
+- **Frontend:** React, Vite
+- **Backend:** None (uses third-party API)
+- **APIs:** Hugging Face Inference API
+- **Deployment:** Vercel
+- **Styling:** CSS
+- **Version Control:** Git, GitHub
+
+---
+
+## 🌟 Features
+
+- Enter a list of ingredients
+- Generate creative recipe suggestions
+- AI-generated recipes using Hugging Face Inference models
+- Responsive UI design
+- Secure handling of API tokens via environment variables
+
+---
+
+
+   ```bash
+   git clone https://github.com/Saikiran-208/Chef-Claude.git
