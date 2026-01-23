@@ -1,36 +1,26 @@
 import { motion } from "framer-motion"
 
-const SidebarWidget = ({ title, items, icon, side }) => {
+const SidebarWidget = ({ title, items, icon, side = "right" }) => {
     return (
         <motion.div
-            initial={{ opacity: 0, x: side === "left" ? -50 : 50 }}
+            initial={{ opacity: 0, x: side === "right" ? 20 : -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className={`flex flex-col gap-4 sm:gap-6 p-4 sm:p-6 rounded-[1.5rem] sm:rounded-[2rem] bg-white/40 backdrop-blur-xl border border-white/40 shadow-xl lg:self-start lg:sticky lg:top-28 w-full lg:w-72`}
+            className="bg-card-bg backdrop-blur-[8px] rounded-lg p-6 shadow-soft border glass-border h-fit"
         >
-            <div className="flex items-center gap-2 sm:gap-3">
-                <span className="text-xl sm:text-2xl">{icon}</span>
-                <h3 className="font-bold text-sm sm:text-base text-gray-900 tracking-tight">{title}</h3>
+            <div className="flex items-center gap-3 mb-6">
+                <span className="text-xl">{icon}</span>
+                <h3 className="text-lg font-semibold text-text-main">{title}</h3>
             </div>
-            <ul className="flex flex-col gap-3 sm:gap-4">
+
+            <div className="list-none">
                 {items.map((item, index) => (
-                    <motion.li
-                        key={index}
-                        initial={{ opacity: 0, y: 10 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ delay: index * 0.1 + 0.3 }}
-                        className="group flex flex-col gap-1 cursor-default"
-                    >
-                        <span className="text-xs sm:text-sm font-bold text-gray-800 group-hover:text-orange-600 transition-colors">
-                            {item.label}
-                        </span>
-                        <p className="text-xs text-gray-500 leading-relaxed">
-                            {item.description}
-                        </p>
-                    </motion.li>
+                    <div key={index} className="mb-5">
+                        <div className="text-[0.95rem] font-bold mb-1">{item.name}</div>
+                        <div className="text-[0.85rem] text-text-muted leading-snug">{item.desc}</div>
+                    </div>
                 ))}
-            </ul>
+            </div>
         </motion.div>
     )
 }

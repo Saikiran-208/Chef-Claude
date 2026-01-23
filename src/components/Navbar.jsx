@@ -1,15 +1,16 @@
-import React from 'react'
-import chefImage from "/src/assets/chef.png"
+import ClaudeLogo from "../assets/chef.png"
+
 const Navbar = () => {
-  return (
-    <>
-    <div className='flex justify-center items-center gap-2 p-4 border-b border-gray-200 shadow bg-white'>
-      <img className='w-12 h-11' src={chefImage} alt="chef img" />
-      <p className='text-4xl '>Chef Claude</p>
-      
-    </div>
-    </>
-  )
+    return (
+        <header className="sticky top-0 z-100 py-4 bg-white/70 backdrop-blur-[10px] border-b border-white/20">
+            <div className="max-w-[1200px] mx-auto flex items-center justify-center gap-3">
+                <img src={ClaudeLogo} alt="Claude Logo" className="h-10 w-auto" />
+                <h1 className="text-2xl font-bold text-[#1a1a1a] font-display">
+                    Chef <span className="text-primary-orange">Claude</span>
+                </h1>
+            </div>
+        </header>
+    )
 }
 
 export default Navbar
