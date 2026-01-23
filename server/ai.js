@@ -1,6 +1,6 @@
 // import Anthropic from "@anthropic-ai/sdk"
-import { CohereClient } from 'cohere-ai' 
-import { InferenceClient  } from '@huggingface/inference'
+import { CohereClient } from 'cohere-ai'
+import { InferenceClient } from '@huggingface/inference'
 
 const SYSTEM_PROMPT = `
 You are an assistant that receives a list of ingredients that a user has and suggests a recipe they could make with some or all of those ingredients. You don't need to use every ingredient they mention in your recipe. The recipe can include additional ingredients they didn't mention, but try not to include too many extra ingredients. Format your response in markdown to make it easier to render to a web page
@@ -17,10 +17,10 @@ You are an assistant that receives a list of ingredients that a user has and sug
 // your API calls can be made. Doing so will keep your
 // API keys private.
 
-const cohere  = new CohereClient({
+const cohere = new CohereClient({
     // Make sure you set an environment variable in Scrimba 
     // for ANTHROPIC_API_KEY
-    apiKey: import.meta.env.VITE_COHERE_API_KEY,
+    token: import.meta.env.VITE_COHERE_API_KEY,
 
     dangerouslyAllowBrowser: true,
 })
@@ -29,24 +29,22 @@ export async function getRecipeFromChefClaude(ingredientsArr) {
     const ingredientsString = ingredientsArr.join(", ")
 
     const msg = await cohere.chat({
-        model: "command-r-plus",
-        messages: [
-            {role:'system', content:SYSTEM_PROMPT},
-            { role: "user", content: `I have ${ingredientsString}. Please give me a recipe you'd recommend I make!` },
-        ],
+        model: "command-r-08-2024",
+        preamble: SYSTEM_PROMPT,
+        message: `I have ${ingredientsString}. Please give me a recipe you'd recommend I make!`,
     });
     return msg.text
 }
 
 // Make sure you set an environment variable in Scrimba 
 // for HF_ACCESS_TOKEN
-const hf = new InferenceClient (import.meta.env.VITE_HF_ACCESS_TOKEN)
+const hf = new InferenceClient(import.meta.env.VITE_HF_ACCESS_TOKEN)
 
 export async function getRecipeFromMistral(ingredientsArr) {
     const ingredientsString = ingredientsArr.join(", ")
     try {
         const response = await hf.chatCompletion({
-            model: "mistralai/Mixtral-8x7B-Instruct-v0.1",
+            model: "meta-llama/Meta-Llama-3-8B-Instruct",
             messages: [
                 { role: "system", content: SYSTEM_PROMPT },
                 { role: "user", content: `I have ${ingredientsString}. Please give me a recipe you'd recommend I make!` },

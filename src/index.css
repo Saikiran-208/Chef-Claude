@@ -1,1 +1,100 @@
 @import "tailwindcss";
+
+@theme {
+    --color-primary-orange: #f24e1e;
+    --color-primary-orange-hover: #d13d10;
+    --color-bg-color: #fafaf8;
+    --color-card-bg: rgba(255, 255, 255, 0.85);
+    --color-text-main: #2d3436;
+    --color-text-muted: #636e72;
+
+    --shadow-soft: 0 8px 30px rgba(0, 0, 0, 0.04);
+    --shadow-md: 0 10px 40px rgba(0, 0, 0, 0.08);
+
+    --radius-lg: 1.5rem;
+    --radius-xl: 2.5rem;
+
+    --font-display: "Outfit", "Inter", sans-serif;
+    --font-body: "Inter", system-ui, -apple-system, sans-serif;
+
+    --animate-fade-in: fadeIn 0.5s ease-out;
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}
+
+/* Global Styles */
+body {
+    font-family: var(--font-body);
+    background-color: var(--color-bg-color);
+    color: var(--color-text-main);
+    background-image:
+        radial-gradient(at 0% 0%, rgba(242, 78, 30, 0.05) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(242, 78, 30, 0.05) 0px, transparent 50%);
+    min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-display);
+}
+
+/* Glass border utility helper if needed, or direct class use */
+@utility glass-border {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.recipe-markdown>h1 {
+    @apply text-3xl font-bold mb-6 mt-8 font-display text-[#1a1a1a];
+}
+
+.recipe-markdown>h2 {
+    @apply text-2xl font-bold mb-4 mt-8 font-display text-[#1a1a1a];
+}
+
+.recipe-markdown>p {
+    @apply mb-4 text-gray-600;
+}
+
+.recipe-markdown>ul,
+.recipe-markdown>ol {
+    @apply pl-6 mb-6;
+}
+
+.recipe-markdown>li {
+    @apply mb-2 pl-2;
+}
+
+.recipe-markdown>ul>li {
+    @apply relative;
+}
+
+.recipe-markdown>ul>li::before {
+    content: '•';
+    @apply text-primary-orange font-bold absolute -left-4;
+}
+
+.recipe-markdown>ol {
+    @apply list-decimal;
+}
+
+.recipe-markdown>ol>li::marker {
+    @apply text-primary-orange font-bold;
+}
+
+.recipe-markdown>blockquote {
+    @apply border-l-4 border-primary-orange pl-4 my-6 italic text-text-muted bg-[#f24e1e08] p-4 rounded-r-2xl;
+}
